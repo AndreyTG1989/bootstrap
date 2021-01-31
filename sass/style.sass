@@ -1,5 +1,41 @@
 *
   font-family: 'Roboto', sans-serif
+$black: #000000
+$white: #ffffff
+$reasons_subtitle: #1eacc7
+$reasons_round: #1eacc7
+$circle_red: #ff5656
+$circle_blue: #1ca8c3
+@mixin label
+  margin: 0 auto
+  height: 24px
+  width: 112px
+  padding: 5px 12px
+  background-color: $white
+  color: $black
+  font-size: 11px
+  font-weight: 300
+  text-transform: uppercase
+  text-align: center
+@mixin title
+  margin-bottom: 0
+  margin-top: 38px
+  color: $white
+  font-size: 38px
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+@mixin subtitle
+  font-size: 17px
+  font-weight: 400
+  color: $white
+  text-align: center
+  margin-top: 19px
+@mixin btn_hover
+  &:hover
+    background-image: none
+    background-color: $reasons_subtitle
+
 
 header
   position: relative
@@ -23,7 +59,7 @@ nav
     text-decoration: none
     font-size: 15px
     font-weight: 300
-    color: #ffffff
+    color: $white
 
   .menu_item
     border-right: 2px dotted #050505
@@ -36,24 +72,24 @@ nav
   height: 84px
   background-color: rgba(0, 0, 0, 0.6)
 
-  .subheader_logo
-    display: block
-    min-width: 100%
-    margin-top: 16px
+.subheader_logo
+  display: block
+  min-width: 100%
+  margin-top: 16px
 
-  .subheader_official
-    opacity: 0.5
-    font-size: 13px
-    font-weight: 100
-    color: #ffffff
-    margin-top: 6px
+.subheader_official
+  opacity: 0.5
+  font-size: 13px
+  font-weight: 100
+  color: $white
+  margin-top: 6px
 
 .subheader_call
   text-align: right
   margin-top: 16px
   font-size: 12px
   font-weight: 300
-  color: #ffffff
+  color: $white
 
 .subheader_phone
   display: block
@@ -62,7 +98,7 @@ nav
   font-size: 22px
   font-weight: 400
   text-transform: uppercase
-  color: #ffffff
+  color: $white
   text-decoration: none
   line-height: 12px
 
@@ -70,7 +106,7 @@ nav
   margin-top: 16px
   width: 178px
   height: 52px
-  background-image: linear-gradient(0deg, #1eacc7 0%, #4ce2ff 100%)
+  background-image: linear-gradient(0deg, $reasons_round 0%, #4ce2ff 100%)
   border: none
   box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.11)
   border-radius: 4px
@@ -78,7 +114,8 @@ nav
   font-size: 14px
   font-weight: 400
   text-transform: uppercase
-  color: #ffffff
+  color: $white
+  @include btn_hover
 
 .promo
   min-height: 800px
@@ -89,7 +126,7 @@ nav
   font-size: 60px
   font-weight: 700
   text-transform: uppercase
-  color: #ffffff
+  color: $white
   line-height: 60px
   margin: 0
   text-align: center
@@ -99,7 +136,7 @@ nav
   line-height: 24px
   font-weight: 700
   text-transform: uppercase
-  color: #ffffff
+  color: $white
   line-height: 36px
   margin: 0
   margin-top: 22px
@@ -109,7 +146,7 @@ nav
   font-size: 20px
   line-height: 24px
   font-weight: 400
-  color: #ffffff
+  color: $white
   margin-top: 23px
   text-align: center
 
@@ -119,65 +156,262 @@ nav
   width: 265px
   height: 69px
   border: none
-  background-image: linear-gradient(0deg, #1eacc7 0%, #4ce2ff 100%)
+  background-image: linear-gradient(0deg, $reasons_round 0%, #4ce2ff 100%)
   box-shadow: inset 0px -4px 0px 0px rgba(0, 0, 0, 0.11)
   border-radius: 4px
   box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.2)
   font-size: 18px
   font-weight: 400
   text-transform: uppercase
-  color: #ffffff
+  color: $white
+  @include btn_hover
 
-.advantages
+.reasons
   padding: 71px 0 65px 0
 
-.advantages_btn
-  display: block
+.label
   margin: 0 auto
-  padding: 5px 12px
-  width: 112px
   height: 24px
+  width: 112px
+  padding: 5px 12px
   background-color: #000000
+  color: $white
   font-size: 11px
-  font-weight: 100
+  font-weight: 300
   text-transform: uppercase
-  color: #ffffff
 
-.advantages_subheader
-  margin-top: 44px
+.title
+  margin-bottom: 0
+  margin-top: 38px
+  color: #222222
   font-size: 38px
   font-weight: 700
   text-transform: uppercase
+  text-align: center
+.subtitle
+  font-size: 17px
+  font-weight: 400
   color: #222222
   text-align: center
+  margin-top: 19px
 
-.advantages_item
+.reasons .reasons_block
   display: flex
   justify-content: center
   align-items: center
   margin-top: 35px
 
-.item_circle
+.reasons_round
   display: flex
   justify-content: center
   align-items: center
   margin-right: 26px
   width: 113px
   height: 113px
-  background-color: #1eacc7
+  background-color: $reasons_subtitle
   border-radius: 100%
 
-.item_descr
+.reasons_descr
   width: 343px
 
-.item_subtitle
+.reasons_subtitle
   line-height: 21px
-  color: #1eacc7
+  color: $reasons_subtitle
   font-size: 17px
   font-weight: 400
 
-.item_text
-  line-height: 21px
+.reasons_text
+  color: #202020
   font-size: 15px
   font-weight: 300
-  color: #202020
+  line-height: 21px
+
+.mobile
+  min-height: 863px
+  padding: 48px 0 79px 0
+  background: url(/img/img/bg_mob.jpg) center (center / cover) no-repeat
+  .row
+    margin-top: 32px
+
+  &_item
+    position: relative
+    width: 320px
+    height: 280px
+    margin: 0 auto
+    margin-bottom: 19px
+    padding-top: 92px
+
+    &_1
+      background: url(/img/img/box/box_1.png) center (center / cover) no-repeat
+
+    &_2
+      background: url(/img/img/box/box_2.png) center (center / cover) no-repeat
+
+    &_3
+      background: url(/img/img/box/box_3.png) center (center / cover) no-repeat
+
+    &_4
+      background: url(/img/img/box/box_4.png) center (center / cover) no-repeat
+
+    &_5
+      background: url(/img/img/box/box_5.png) center (center / cover) no-repeat
+
+    &_6
+      background: url(/img/img/box/box_6.png) center (center / cover) no-repeat
+
+    &_subtitle
+      font-size: 24px
+      line-height: 31px
+      font-weight: 400
+      text-transform: uppercase
+      color: $white
+      text-align: center
+
+    &_plus
+      display: flex
+      justify-content: center
+      align-items: center
+      position: absolute
+      bottom: 35px
+      left: 50%
+      transform: translateX(-50%)
+      width: 26px
+      height: 26px
+      background-color: #000000
+      margin: 0 auto
+      border-radius: 100%
+      cursor: pointer
+      &::before
+        content: ""
+        transition: 0.3s
+        display: block
+        width: 14px
+        height: 2px
+        background: $reasons_round
+      &::after
+        content: ""
+        transition: 0.3s
+        position: absolute
+        display: block
+        width: 2px
+        height: 14px
+        background: $reasons_round
+      &:hover
+        &::before, &::after
+          background: $circle_red
+
+.auto_one
+  height: 499px
+  background-color: #070716
+  padding-top: 57px
+.label_label
+  @include  label
+.title_title
+  @include  title
+.subtitle_subtitle
+  @include  subtitle
+  .auto_one_img
+    min-height: 614px
+    min-width: 759px
+    .auto_img
+      display: block
+      margin: 0 auto
+      padding-top: 56px
+      z-index: 3
+.auto_two
+  height: 397px
+  background: url(/img/img/bg_mob.jpg) center (center / cover) no-repeat
+  padding-top: 217px
+  .auto_item_text
+    font-size: 17px
+    line-height: 24px
+    font-weight: 300
+    color: #222222
+    text-align: center
+
+.require
+	padding: 68px 0 84px 0
+	&_block
+		margin: 33px 0
+		&_nmb
+			margin-bottom: 0px
+	&_title
+		color: #1ca8c3
+		font-size: 22px
+		font-weight: 400
+	&_list
+		list-style-type: none
+		padding-left: 50px
+		margin-top: 22px
+		li
+			position: relative
+			font-size: 17px
+			font-weight: 300
+			line-height: 24px
+			margin-bottom: 10px
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: -32px
+				top: 3px
+				width: 21px
+				height: 20px
+				background-image: url(../img/ico/blue.png)
+	&_descr
+		margin-top: 25px
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+		color: #1ca8c3
+
+.warning
+  .require_title
+    color: $circle_red
+  .require_list
+    li
+      &::before
+        content: ''
+        background-image: url(../img/ico/red.png)
+
+.word
+  height: 717px
+  background-color: #080816
+  .word_img
+    background: url(/img/img/word.jpg) center (center / cover) no-repeat
+    height: 717px
+    padding: 49px 0
+    .word_link_link
+      text-align: center
+      padding-top: 437px
+      a
+        font-size: 15px
+        font-weight: 400
+        text-transform: uppercase
+        color: #1fbad6
+        text-decoration: none
+.footer
+  height: 148px
+  padding: 14px 0 31px 0
+  &_flex
+    display: flex
+    justify-content: space-between
+    .footer_nav
+      min-width: 390px
+      .footer_line
+        margin: 0 auto
+        width: 299px
+        height: 4px
+        background-color: #1fbad6
+      .footer_item
+        margin-top: 30px
+        display: flex
+        justify-content: space-between
+        &_text
+          a
+            font-size: 15px
+            line-height: 68px
+            font-weight: 300
+            text-transform: uppercase
+            color: #070716
+            text-decoration: none
